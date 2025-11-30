@@ -8,16 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* File: style.css */
-
-/* --- 1. Global Reset & Variables --- */
 :root {
-    --color-primary: #FF7043; /* Coral/Orange - CTA Buttons */
-    --color-secondary: #4CAF50; /* Green - Accent Button */
+    --color-primary: #FF7043;
+    --color-secondary: #4CAF50;
     --color-text-dark: #333333;
     --color-text-light: #555555;
     --color-background-light: #F8F8F8;
-    --color-background-section: #E8F5E9; /* Light Green background */
+    --color-background-section: #E8F5E9;
     --color-footer-dark: #333333;
     --color-text-white: #ffffff;
     --font-primary: 'Poppins', sans-serif;
@@ -34,7 +31,7 @@ body {
     font-family: var(--font-primary);
     color: var(--color-text-dark);
     line-height: 1.6;
-    background-color: #a5d6a7; /* Outer body background color */
+    background-color: #a5d6a7;
 }
 
 a {
@@ -51,7 +48,7 @@ h1, h2, h3, h4 {
 .page-wrapper {
     max-width: 1400px;
     margin: 0 auto;
-    background-color: #fff; /* Inner page content background white */
+    background-color: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -63,7 +60,7 @@ h1, h2, h3, h4 {
 .btn-primary, .btn-contact {
     padding: 10px 25px;
     border: none;
-    border-radius: 25px; /* Rounded buttons */
+    border-radius: 25px;
     cursor: pointer;
     font-weight: 700;
     transition: background-color 0.3s;
@@ -79,7 +76,6 @@ h1, h2, h3, h4 {
     background-color: #e65224;
 }
 
-/* --- 2. Header & Navbar --- */
 .header {
     display: flex;
     justify-content: space-between;
@@ -108,7 +104,6 @@ h1, h2, h3, h4 {
     background-color: #388e3c;
 }
 
-/* --- 3. Hero Section --- */
 .hero-section {
     display: flex;
     justify-content: space-between;
@@ -144,10 +139,9 @@ h1, h2, h3, h4 {
 .hero-image img {
     width: 100%;
     height: auto;
-    border-radius: 50%; /* Image in the design looks circular */
+    border-radius: 50%;
 }
 
-/* --- 4. Trendy Recipes --- */
 .trendy-recipes {
     background-color: #fff;
 }
@@ -181,7 +175,6 @@ h2 {
     color: var(--color-text-dark);
 }
 
-/* --- 5. Shop Categories --- */
 .shop-categories {
     background-color: var(--color-background-light);
 }
@@ -211,7 +204,6 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* --- 6. Recipe Blogs --- */
 .recipe-blogs {
     background-color: #fff;
     text-align: left;
@@ -260,7 +252,6 @@ h2 {
     border-radius: 5px;
 }
 
-/* --- 7. Newsletter Subscription --- */
 .newsletter-section {
     background: var(--color-footer-dark) url('https://via.placeholder.com/1200x300/222222?text=Vegetables+Background') no-repeat center center;
     background-size: cover;
@@ -311,7 +302,6 @@ h2 {
     padding: 12px 20px;
 }
 
-/* --- 8. Featured Recipes --- */
 .featured-recipes {
     background-color: #fff;
 }
@@ -339,7 +329,6 @@ h2 {
     font-size: 1.1rem;
 }
 
-/* --- 9. Footer --- */
 .footer {
     background-color: var(--color-footer-dark);
     color: #cccccc;
@@ -364,8 +353,55 @@ h2 {
 .social-icons a:hover {
     color: var(--color-primary);
 }
+.featured-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+}
 
-/* --- Media Queries for Responsiveness --- */
+.featured-card:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1); 
+    color: var(--color-primary); 
+}
+
+.featured-card:hover h4 {
+    color: var(--color-primary);
+}
+
+.featured-card:hover p {
+    color: var(--color-text-dark); 
+}
+
+.recipe-card {
+    position: relative; 
+    overflow: hidden; 
+}
+
+.recipe-card img {
+    transition: all 0.5s ease-in-out; 
+    filter: brightness(100%); 
+}
+
+
+.recipe-card:hover img {
+   
+    transform: scale(1.05); 
+
+    filter: brightness(1.1); 
+    
+}
+
+
+.recipe-card:hover h4 {
+    
+    color: var(--color-primary);
+    
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-out;
+}
 @media (max-width: 1024px) {
     .hero-section, .blogs-container {
         flex-direction: column;
@@ -471,7 +507,7 @@ h2 {
             </div>
         </section>
 
-       <section class="section shop-categories">
+        <section class="section shop-categories">
     <h2>Check Our Shop</h2>
     <div class="categories-list">
         <div class="category-item">
@@ -551,7 +587,7 @@ h2 {
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
-            </section>
+        </section>
 
         <section class="section featured-recipes">
             <h2>Featured Recipes</h2>
@@ -600,7 +636,5 @@ h2 {
             </div>
         </footer>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
