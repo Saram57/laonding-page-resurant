@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Dishes for Food Lovers</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* File: style.css */
+
+/* --- 1. Global Reset & Variables --- */
+:root {
+    --color-primary: #FF7043; /* Coral/Orange - CTA Buttons */
+    --color-secondary: #4CAF50; /* Green - Accent Button */
+    --color-text-dark: #333333;
+    --color-text-light: #555555;
+    --color-background-light: #F8F8F8;
+    --color-background-section: #E8F5E9; /* Light Green background */
+    --color-footer-dark: #333333;
+    --color-text-white: #ffffff;
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    background-color: #a5d6a7; /* Outer body background color */
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    transition: color 0.3s;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-primary);
+    color: var(--color-text-dark);
+}
+
+.page-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff; /* Inner page content background white */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.section {
+    padding: 4rem 8%;
+    text-align: center;
+}
+
+.btn-primary, .btn-contact {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px; /* Rounded buttons */
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-white);
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #e65224;
+}
+
+/* --- 2. Header & Navbar --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 8%;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.logo i {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+}
+
+.navbar a {
+    margin: 0 15px;
+    font-weight: 500;
+}
+
+.btn-contact {
+    background-color: var(--color-secondary);
+    color: var(--color-text-white);
+    border-radius: 5px;
+}
+.btn-contact:hover {
+    background-color: #388e3c;
+}
+
+/* --- 3. Hero Section --- */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem 8%;
+    text-align: left;
+    background-color: var(--color-background-light);
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 45%;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--color-text-dark);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 45%;
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Image in the design looks circular */
+}
+
+/* --- 4. Trendy Recipes --- */
+.trendy-recipes {
+    background-color: #fff;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--color-text-dark);
+}
+
+.recipe-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.recipe-card {
+    width: 30%;
+    text-align: center;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card h4 {
+    color: var(--color-text-dark);
+}
+
+/* --- 5. Shop Categories --- */
+.shop-categories {
+    background-color: var(--color-background-light);
+}
+
+.categories-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 120px;
+}
+
+.category-item i {
+    font-size: 2rem;
+    color: var(--color-primary);
+    background-color: #ffe0b2;
+    border-radius: 50%;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+/* --- 6. Recipe Blogs --- */
+.recipe-blogs {
+    background-color: #fff;
+    text-align: left;
+}
+
+.blogs-container {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.main-blog {
+    flex: 2;
+    position: relative;
+}
+
+.main-blog img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.main-blog h4 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+.side-blogs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.side-blog-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-align: right;
+}
+
+.side-blog-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* --- 7. Newsletter Subscription --- */
+.newsletter-section {
+    background: var(--color-footer-dark) url('https://via.placeholder.com/1200x300/222222?text=Vegetables+Background') no-repeat center center;
+    background-size: cover;
+    color: var(--color-text-white);
+    padding: 5rem 8%;
+    text-align: left;
+    position: relative;
+}
+
+.newsletter-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.newsletter-content {
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+}
+
+.newsletter-content h2 {
+    color: var(--color-text-white);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.newsletter-content form {
+    display: flex;
+    margin-top: 20px;
+}
+
+.newsletter-content input {
+    padding: 12px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    flex-grow: 1;
+}
+
+.newsletter-content button {
+    background-color: var(--color-primary);
+    color: var(--color-text-white);
+    border-radius: 0 5px 5px 0;
+    padding: 12px 20px;
+}
+
+/* --- 8. Featured Recipes --- */
+.featured-recipes {
+    background-color: #fff;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.featured-card {
+    text-align: center;
+}
+
+.featured-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.featured-card h4 {
+    font-size: 1.1rem;
+}
+
+/* --- 9. Footer --- */
+.footer {
+    background-color: var(--color-footer-dark);
+    color: #cccccc;
+    padding: 3rem 8%;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #444;
+    padding-top: 2rem;
+}
+
+.social-icons a {
+    color: #cccccc;
+    font-size: 1.2rem;
+    margin-left: 15px;
+}
+
+.social-icons a:hover {
+    color: var(--color-primary);
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 1024px) {
+    .hero-section, .blogs-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content, .hero-image, .main-blog, .side-blogs {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+    .hero-content {
+        order: 2;
+    }
+    .hero-image {
+        order: 1;
+    }
+    .side-blogs {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .side-blog-item {
+        width: 45%;
+    }
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .recipe-grid {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .recipe-card {
+        width: 100%;
+    }
+    .categories-list {
+        gap: 1rem;
+    }
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+            </div>
+            <nav class="navbar">
+                <a href="#">Home</a>
+                <a href="#">Recipes</a>
+                <a href="#">Blog</a>
+                <a href="#">Shop</a>
+            </nav>
+            <div class="contact-info">
+                <span>Contact Us</span>
+                <button class="btn-contact">Request Service</button>
+            </div>
+        </header>
+
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Delicious Dishes for Food Lovers</h1>
+                <p>Explore thousands of easy and innovative recipes from around the world. Start your culinary adventure now.</p>
+                <button class="btn-primary">Explore Recipes</button>
+            </div>
+            <div class="hero-image">
+                <img src="./0cfdc7ae6ed486196a990a3881c3bfa7.jpg" alt="Delicious food dish">
+            </div>
+        </section>
+
+        <section class="section trendy-recipes">
+            <h2>Trendy Recipes</h2>
+            <div class="recipe-grid">
+                <div class="recipe-card">
+                    <img src="./37e041eab9803d16d849ced4d0198adf.jpg" alt="Trendy Recipe">
+                    <h4>Spicy Fried beef</h4>
+                </div>
+                <div class="recipe-card">
+                    <img src="./3e8fa9f2aec40acf862b677bf2e946c1.jpg" alt="Trendy Recipe">
+                    <h4>Asian Style pizza</h4>
+                </div>
+                <div class="recipe-card">
+                    <img src="./9c2be98aca9933f7f04eaaf2b574a6a0.jpg" alt="Trendy Recipe">
+                    <h4>pizza</h4>
+                </div>
+            </div>
+        </section>
+
+       <section class="section shop-categories">
+    <h2>Check Our Shop</h2>
+    <div class="categories-list">
+        <div class="category-item">
+            <i class="fas fa-pepper-hot"></i>
+            <span>Appetizers</span>
+        </div>
+        <div class="category-item">
+            <i class="fas fa-pizza-slice"></i>
+            <span>Pizza</span>
+        </div>
+        <div class="category-item">
+            <i class="fas fa-hamburger"></i>
+            <span>Sandwiches</span>
+        </div>
+        <div class="category-item">
+            <i class="fas fa-cheese"></i>
+            <span>Sides</span>
+        </div>
+        <div class="category-item">
+            <i class="fas fa-ice-cream"></i>
+            <span>Dessert</span>
+        </div>
+        <div class="category-item">
+            <i class="fas fa-blender"></i>
+            <span>Drinks</span>
+        </div>
+    </div>
+</section>
+
+        <section class="section recipe-blogs">
+            <h2>Recipe Blogs</h2>
+            <div class="blogs-container">
+                <div class="main-blog">
+                    <img src="./a2304b13a5a90c7d4b3e00b69f565089.jpg" alt="Chef cooking">
+                    <a href="#">Read More</a>
+                    <h4>Our Recipe Blog</h4>
+                    <p>Exclusive content about kitchen secrets and cooking techniques.</p>
+                </div>
+                <div class="side-blogs">
+                    <div class="side-blog-item">
+                       <img src="./طماطم.jpg" alt="Blog image">
+                        <div>
+                            <h4>Our Recipes Blog</h4>
+                            <p>Short snippet</p>
+                        </div>
+                    </div>
+                    <div class="side-blog-item">
+                        <img src="./Kg.jpg" alt="Blog image">
+                        <div>
+                            <h4>Our Recipes Blog</h4>
+                            <p>Short snippet</p>
+                        </div>
+                    </div>
+                    <div class="side-blog-item">
+                        <img src="./لحم.jpg" alt="Blog image">
+                        <div>
+                            <h4>Our Recipes Blog</h4>
+                            <p>Short snippet</p>
+                        </div>
+                    </div>
+                    <div class="side-blog-item">
+                        <img src="./بصلjpg.jpg" alt="Blog image">
+                        <div>
+                            <h4>Our Recipes Blog</h4>
+                            <p>Short snippet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section newsletter-section">
+            <div class="newsletter-content">
+                <h2>Subscribe to our newsletter</h2>
+                <form>
+                    <input type="email" placeholder="Enter your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            </section>
+
+        <section class="section featured-recipes">
+            <h2>Featured Recipes</h2>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <img src="./bargar.jpg" alt="Featured Recipe">
+                    <h4>Spiced barger</h4>
+                    <p>A wonderful Asian recipe</p>
+                </div>
+                <div class="featured-card">
+                    <img src="./big.jpg" alt="Featured Recipe">
+                    <h4>Cookie Family</h4>
+                    <p>A great dessert recipe</p>
+                </div>
+                <div class="featured-card">
+                    <img src="./chicken.png" alt="Featured Recipe">
+                    <h4>Lemony Chicken Recipe</h4>
+                    <p>A quick dinner recipe</p>
+                </div>
+                <div class="featured-card">
+                    <img src="./da.jpg" alt="Featured Recipe">
+                    <h4>chicken </h4>
+                    <p>Healthy and delicious</p>
+                </div>
+                <div class="featured-card">
+                    <img src="./pizza.jpg" alt="Featured Recipe">
+                    <h4>pizza</h4>
+                    <p>Summer fruit mix</p>
+                </div>
+                <div class="featured-card">
+                    <img src="./pizza2.jpg" alt="Featured Recipe">
+                    <h4>hot pizza</h4>
+                    <p>A complete vegetarian dish</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 All rights reserved. Delicious Recipes.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
